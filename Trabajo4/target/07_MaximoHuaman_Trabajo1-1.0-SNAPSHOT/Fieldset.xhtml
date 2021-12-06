@@ -1,0 +1,79 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+    <h:head>
+        <title>TODO supply a title</title>
+    </h:head>
+    <h:body>
+        <style>
+            body {background-color: darkcyan}
+        </style>
+
+        <h:form>  
+            <p:menubar>  
+                <p:menuitem value="Accordion" url="./faces/Accordion.xhtml" />                
+                <p:menuitem value="PanelGrid" url="./faces/PanelGrid.xhtml" />
+                <p:menuitem value="ScrollPanel" url="./faces/ScrollPanel.xhtml" />
+                <p:menuitem value="TabView" url="./faces/TabView.xhtml" />
+            </p:menubar>
+        </h:form>
+        <center>
+            <h1>Componente Fieldset</h1>
+        </center>
+        <h:form>
+            <p:growl id="msgs" showDetail="true" skipDetailIfEqualsSummary="true"/>
+
+            <h2 class="p-mt-0">Regular</h2>
+            <p:fieldset legend="Header">
+                <p class="p-m-0">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                    dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+            </p:fieldset>
+
+            <h2>Conmutable</h2>
+            <p:fieldset legend="Header" toggleable="true" toggleSpeed="500">
+                <p:ajax event="toggle" listener="#{eventos.handleToggle}" update="msgs"/>
+                <p class="p-m-0">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                    dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+            </p:fieldset>
+
+            <h2>Conmutable con contenido</h2>
+            <p:fieldset legend="Header" toggleable="true" toggleSpeed="500" style="background-color: gainsboro">
+                <p:ajax event="toggle" listener="#{eventos.handleToggle}" update="msgs"/>
+                <center>
+                    <!--        Formulario del Cliente    >-->   
+                    <p:panelGrid columns="2" styleClass="showcase-text-align-left">
+                        <f:facet name= "header"> INGRESAR DATOS DEL CLIENTE</f:facet>
+
+                        <p:outputLabel for="nombre" value="NOMBRE: " /> 
+                        <p:inputText style="width: 230px" 
+                                     id="nombre" value="#{clienteC.cli.NOMCLI}" />
+
+                        <p:outputLabel for="apellido" value="APELLIDO: " /> 
+                        <p:inputText style="width: 230px" 
+                                     id="apellido" value="#{clienteC.cli.APECLI}" />
+
+                        <p:outputLabel value="DNI: " />
+                        <p:inputText style="width: 230px"
+                                     id="dni" value="#{clienteC.cli.DNICLI}" />
+
+                        <p:outputLabel value="SEXO: " />
+                        <p:selectOneRadio id="sexo" value="#{clienteC.cli.SEXCLI}"  />
+
+                        <p:outputLabel value="TELÉFONO: " /> 
+                        <p:inputText id="telefono" value="#{clienteC.cli.TELFCLI}" />
+
+                    </p:panelGrid>
+                </center>
+            </p:fieldset>
+        </h:form>
+    </h:body>
+</html>

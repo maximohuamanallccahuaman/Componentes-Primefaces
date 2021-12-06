@@ -1,0 +1,72 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+    <h:head>
+        <title>ScrollPanel</title>
+    </h:head>
+    <h:body>
+        <style>
+            body {background-color: yellow}
+        </style>
+
+        <h:form>  
+            <p:menubar>  
+                <p:menuitem value="Accordion" url="./faces/Accordion.xhtml" />
+                <p:menuitem value="Draggable" url="./faces/Draggable.xhtml" />
+                <p:menuitem value="Fieldset" url="./faces/Fieldset.xhtml" />
+                <p:menuitem value="ScrollPanel" url="./faces/ScrollPanel.xhtml" />
+                <p:menuitem value="TabView" url="./faces/TabView.xhtml" />
+            </p:menubar>
+        </h:form>
+        <center>
+            <h1>Componente ScrollPanel</h1>
+        </center>
+        <h:form>
+            <div class="card">
+                <center>
+                    <h2 style="margin-top:0">Barras de desplazamiento</h2>
+                    <p:scrollPanel style="width:350px;height:400px">
+                        <p class="p-m-0 p-p-3">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            Vitae et leo duis ut diam.
+                            Ultricies mi quis hendrerit dolor magna eget est lorem. Amet consectetur adipiscing elit ut.
+                            Nam libero justo laoreet sit amet. Pharetra massa massa ultricies mi quis hendrerit dolor magna.
+                            Est ultricies integer quis auctor elit sed vulputate. Consequat ac felis donec et. Tellus orci ac auctor augue mauris.
+                            Semper feugiat nibh sed pulvinar proin gravida hendrerit lectus a. Tincidunt arcu non sodales neque sodales.
+                            Metus aliquam eleifend mi in nulla posuere sollicitudin aliquam ultrices. Sodales ut etiam sit amet nisl purus.
+                            Cursus sit amet dictum sit amet. Tristique senectus et netus et malesuada fames ac turpis egestas.
+                            Et tortor consequat id porta nibh venenatis cras sed. Diam maecenas ultricies mi eget mauris.
+                            Eget egestas purus viverra accumsan in nisl nisi. Suscipit adipiscing bibendum est ultricies integer.
+                            Mattis aliquam faucibus purus in massa tempor nec.
+                        </p>
+                    </p:scrollPanel>
+                </center>
+            </div>
+
+            <div class="card">
+                <center>
+                    <h2>ScrollPanel nativo</h2>
+                    <p:scrollPanel mode="native" style="width:250px;height:200px">
+                        <p class="p-m-0">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            Vitae et leo duis ut diam.
+                            Ultricies mi quis hendrerit dolor magna eget est lorem. Amet consectetur adipiscing elit ut.
+                            Nam libero justo laoreet sit amet. Pharetra massa massa ultricies mi quis hendrerit dolor magna.
+                            Est ultricies integer quis auctor elit sed vulputate. Consequat ac felis donec et. Tellus orci ac auctor augue mauris.
+                            Semper feugiat nibh sed pulvinar proin gravida hendrerit lectus a. Tincidunt arcu non sodales neque sodales.
+                            Metus aliquam eleifend mi in nulla posuere sollicitudin aliquam ultrices. Sodales ut etiam sit amet nisl purus.
+                            Cursus sit amet dictum sit amet. Tristique senectus et netus et malesuada fames ac turpis egestas.
+                            Et tortor consequat id porta nibh venenatis cras sed. Diam maecenas ultricies mi eget mauris.
+                            Eget egestas purus viverra accumsan in nisl nisi. Suscipit adipiscing bibendum est ultricies integer.
+                            Mattis aliquam faucibus purus in massa tempor nec.
+                        </p>
+                    </p:scrollPanel>
+                </center>
+            </div>
+        </h:form>
+    </h:body>
+</html>
+

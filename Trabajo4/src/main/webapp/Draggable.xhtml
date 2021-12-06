@@ -1,0 +1,67 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+    <h:head>
+        <title>Draggable</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <style>
+            body {background-color: greenyellow}
+        </style>
+
+        <h:form>  
+            <p:menubar>  
+                <p:menuitem value="Accordion" url="./faces/Accordion.xhtml" />
+                <p:menuitem value="Draggable" url="./faces/Draggable.xhtml" />
+                <p:menuitem value="Fieldset" url="./faces/Fieldset.xhtml" />
+                <p:menuitem value="ScrollPanel" url="./faces/ScrollPanel.xhtml" />
+                <p:menuitem value="TabView" url="./faces/TabView.xhtml" />
+            </p:menubar>
+        </h:form>
+
+        <style type="text/css">
+            .ui-panel {
+                margin: 15px;
+                width: 300px;
+            }
+        </style>
+
+
+        <p:panel id="pnl01" header="Panel arrastrable">
+            <img src="imagen/logo.png" alt="" style="width: 280px"/>
+        </p:panel>
+        <p:draggable for="pnl01" />
+
+        <p:panel id="pnl02" header="Handle">
+            <img src="imagen/logo.png" alt="" style="width: 280px"/>
+        </p:panel>
+        <p:draggable for="pnl02" handle=".ui-panel-titlebar" />
+
+        <p:panel id="pnl03" header="Solo horizontal">
+            <img src="imagen/logo.png" alt="" style="width: 280px"/>
+        </p:panel>
+        <p:draggable for="pnl03" axis="x" />
+
+        <p:panel id="pnl04" header="Solo vertical">
+            <img src="imagen/logo.png" alt="" style="width: 280px"/>
+        </p:panel>
+        <p:draggable for="pnl04" axis="y" />
+
+        <p:panel id="pnl05" header="Revertir">
+            <img src="imagen/logo.png" alt="" style="width: 280px"/>
+        </p:panel>
+        <p:draggable for="pnl05" revert="true" opacity="0.3" />
+
+        <p:outputPanel id="restrictPanel" layout="block" style="width:400px;height:200px;border:1px solid #666666;margin-bottom:20px">
+            <p:panel id="pnl06" header="Restringido">
+                <img src="imagen/logo.png" alt="" style="width: 280px"/>
+            </p:panel>
+        </p:outputPanel>
+        <p:draggable for="pnl06" containment="parent" />
+
+    </h:body>
+</html>
