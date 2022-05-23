@@ -1,0 +1,121 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+    <h:head>
+        <title>Accordion</title>
+    </h:head>
+    <h:body>
+        <style>
+            body {background-color: orange}
+        </style>
+
+        <h:form>  
+            <p:menubar style="background-color: yellow">  
+                <p:menuitem value="Accordion" url="./faces/Accordion.xhtml" style="font-family: fantasy;" />
+                <p:menuitem value="Fieldset" url="./faces/Fieldset.xhtml" style="font-family: fantasy;"/>
+                <p:menuitem value="ScrollPanel" url="./faces/ScrollPanel.xhtml" style="font-family: fantasy;"/>
+                <p:menuitem value="TabView" url="./faces/TabView.xhtml" style="font-family: fantasy;"/>
+            </p:menubar>
+        </h:form>
+        <center>
+            <h1 style="font: oblique bold 220% cursive;" >Componente Accordion</h1>
+        </center>
+        <h:form id="form">
+            <p:growl id="msgs" showDetail="true" skipDetailIfEqualsSummary="true"/>
+
+            <h2>Selección Multiple</h2>
+            <p:accordionPanel multiple="true" style="width: 80%">
+                <p:tab title="El Padrino Parte I">
+                    <h:panelGrid cellpadding="30">
+                        <h:outputText
+                            value="Vito Corleone es el jefe de una de las familias que lideran la Cosa Nostra neoyorkina durante los años 40. 
+                            Dos de sus hijos participan en las actividades ilícitas, mientras que Michael, el menor de los hijos, 
+                            está distanciado del negocio familiar. Un atentado contra don Vito orilla a Michael a cuidar de su 
+                            padre y tomar las riendas de los negocios. Referente obligado del cine de gánsters, 
+                            El padrino explora los mecanismos del poder en la mafia y sus rigurosos códigos familiares. 
+                            Basado en una novela de Mario Puzo, Francis Ford Coppola configuró este filme a partir de un lóbrego estilo visual, 
+                            un riguroso guion y un sólido reparto encabezado por Marlon Brando, Al Pacino y Robert Duvall." />
+                    </h:panelGrid>
+                </p:tab>
+                <p:tab title="El Padrino Parte II">
+                    <h:panelGrid cellpadding="10">
+                        <h:outputText value="Vito Corleone es el jefe de una de las familias que lideran la Cosa Nostra neoyorkina durante los años 40. 
+                                      Dos de sus hijos participan en las actividades ilícitas, mientras que Michael, el menor de los hijos, 
+                                      está distanciado del negocio familiar. Un atentado contra don Vito orilla a Michael a cuidar de su 
+                                      padre y tomar las riendas de los negocios. Referente obligado del cine de gánsters, 
+                                      El padrino explora los mecanismos del poder en la mafia y sus rigurosos códigos familiares. 
+                                      Basado en una novela de Mario Puzo, Francis Ford Coppola configuró este filme a partir de un lóbrego estilo visual, 
+                                      un riguroso guion y un sólido reparto encabezado por Marlon Brando, Al Pacino y Robert Duvall." />
+                    </h:panelGrid>
+                </p:tab>
+                <p:tab title="El Padrino Parte III">
+                    <h:panelGrid cellpadding="10">
+                        <h:outputText value="Vito Corleone es el jefe de una de las familias que lideran la Cosa Nostra neoyorkina durante los años 40. 
+                                      Dos de sus hijos participan en las actividades ilícitas, mientras que Michael, el menor de los hijos, 
+                                      está distanciado del negocio familiar. Un atentado contra don Vito orilla a Michael a cuidar de su 
+                                      padre y tomar las riendas de los negocios. Referente obligado del cine de gánsters, 
+                                      El padrino explora los mecanismos del poder en la mafia y sus rigurosos códigos familiares. 
+                                      Basado en una novela de Mario Puzo, Francis Ford Coppola configuró este filme a partir de un lóbrego estilo visual, 
+                                      un riguroso guion y un sólido reparto encabezado por Marlon Brando, Al Pacino y Robert Duvall." />
+                    </h:panelGrid>
+                </p:tab>
+                <p:tab>
+                    <p:graphicImage url="https://wongfood.vteximg.com.br/arquivos/ids/429386-1000-1000/Vino-Tinto-Blend-Demuerte-One-Wineryon-Botella-750-ml-1-198908689.jpg?v=637540438069170000"/>
+                </p:tab>
+            </p:accordionPanel>
+
+            <div class="card">
+                <h2>Cambio de evento</h2>
+                <p:accordionPanel>
+                    <p:ajax event="tabChange" listener="#{eventos.onTabChange}" update=":form:msgs"/>
+                    <p:ajax event="tabClose" listener="#{eventos.onTabClose}" update=":form:msgs"/>
+
+                    <p:tab title="Título I">
+                        <p class="p-m-0">
+                            Invencible nos cuenta la historia de Mark Grayson, un chico que está en su último año de instituto y cuyo padre es Omni-Man, el superhéroe más poderoso del planeta. 
+                            Mark descubre que ha heredado los poderes de su padre y tendrá que lidiar con su herencia y los problemas típicos de todo adolescente que se precie.
+                        </p>
+                    </p:tab>
+                    <p:tab title="Título II">
+                        <p class="p-m-0">
+                            Invencible nos cuenta la historia de Mark Grayson, un chico que está en su último año de instituto y cuyo padre es Omni-Man, el superhéroe más poderoso del planeta. 
+                            Mark descubre que ha heredado los poderes de su padre y tendrá que lidiar con su herencia y los problemas típicos de todo adolescente que se precie.
+                        </p>
+                    </p:tab>
+                    <p:tab title="Título III">
+                        <p class="p-m-0">
+                            Invencible nos cuenta la historia de Mark Grayson, un chico que está en su último año de instituto y cuyo padre es Omni-Man, el superhéroe más poderoso del planeta. 
+                            Mark descubre que ha heredado los poderes de su padre y tendrá que lidiar con su herencia y los problemas típicos de todo adolescente que se precie.
+                        </p>
+                    </p:tab>
+                </p:accordionPanel>
+            </div>
+
+<!--            <div class="card">
+                <h5>DataModel</h5>
+                <p:accordionPanel value="#{productoC.listadoPro}" var="product">
+                    <p:tab title="#{productoC.pro.nombre}"/>
+                    <div class="product-list-item">
+                        <p:graphicImage url="https://wongfood.vteximg.com.br/arquivos/ids/429386-1000-1000/Vino-Tinto-Blend-Demuerte-One-Wineryon-Botella-750-ml-1-198908689.jpg?v=637540438069170000" style="width: 30%"/>
+                        <div class="product-list-detail">
+                            <div class="product-name">#{productoC.pro.nombre}</div>
+                            <div class="product-description">#{productoC.pro.presentacion}</div>
+                            <p:rating readonly="true" value="#{product.rating}"/>
+                            <i class="pi pi-tag product-category-icon"/><span
+                                class="product-category">#{product.category}</span>
+                        </div>
+                        <div class="product-list-action">
+                            <h:outputText value="#{product.price}" styleClass="product-price">
+                                <f:convertNumber currencySymbol="$" type="currency"/>
+                            </h:outputText>
+                            <span class="product-badge status-#{product.inventoryStatus.name().toLowerCase()}">#{product.inventoryStatus.text}</span>
+                        </div>
+                    </div>
+                </p:accordionPanel>
+            </div>-->
+        </h:form>
+    </h:body>
+</html>

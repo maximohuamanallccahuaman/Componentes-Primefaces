@@ -1,0 +1,48 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+    <h:head>
+        <title>Fieldset</title>
+    </h:head>
+    <h:body>
+        <style>
+            body {background-color: skyblue}
+        </style>
+
+        <h:form>  
+            <p:menubar style="background-color: yellow">  
+                <p:menuitem value="Accordion" url="./faces/Accordion.xhtml" style="font-family: fantasy;"/>
+                <p:menuitem value="Fieldset" url="./faces/Fieldset.xhtml" style="font-family: fantasy;"/>
+                <p:menuitem value="ScrollPanel" url="./faces/ScrollPanel.xhtml" style="font-family: fantasy;"/>
+                <p:menuitem value="TabView" url="./faces/TabView.xhtml" style="font-family: fantasy;"/>
+            </p:menubar>
+        </h:form>
+        <center>
+            <h1 style="font: oblique bold 220% cursive;">Componente Fieldset</h1>
+        </center>
+        <h:form>
+            <p:growl id="msgs" showDetail="true" skipDetailIfEqualsSummary="true"/>
+
+            <h2 class="p-mt-0">Regular</h2>
+            <p:fieldset legend="Básico">
+                <p class="p-m-0">
+                    Invencible nos cuenta la historia de Mark Grayson, un chico que está en su último año de instituto y cuyo padre es Omni-Man, el superhéroe más poderoso del planeta. 
+                    Mark descubre que ha heredado los poderes de su padre y tendrá que lidiar con su herencia y los problemas típicos de todo adolescente que se precie.
+                </p>
+            </p:fieldset>
+
+            <h2>Conmutable</h2>
+            <p:fieldset legend="Conmutable" toggleable="true" toggleSpeed="100">
+                <p:ajax event="toggle" listener="#{eventos.handleToggle}" update="msgs"/>
+                <p class="p-m-0">
+                    Invencible nos cuenta la historia de Mark Grayson, un chico que está en su último año de instituto y cuyo padre es Omni-Man, el superhéroe más poderoso del planeta. 
+                    Mark descubre que ha heredado los poderes de su padre y tendrá que lidiar con su herencia y los problemas típicos de todo adolescente que se precie.
+                </p>
+            </p:fieldset>
+
+        </h:form>
+    </h:body>
+</html>

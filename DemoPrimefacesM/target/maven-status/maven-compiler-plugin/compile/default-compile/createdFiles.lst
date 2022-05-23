@@ -1,0 +1,8 @@
+com\mycompany\DemoPrimefacesM\JAXRSConfiguration.class
+controlador\ProductoC.class
+controlador\Eventos.class
+dao\Conexion.class
+dao\ICRUD.class
+modelo\Productos.class
+dao\ProductoImpl.class
+com\mycompany\DemoPrimefacesM\resources\JavaEE8Resource.class

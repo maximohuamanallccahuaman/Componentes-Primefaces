@@ -1,0 +1,126 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+    <h:head>
+        <title>TabView</title>
+    </h:head>
+    <h:body>
+        <style>
+            body {background-color: firebrick}
+        </style>
+
+        <h:form>  
+            <p:menubar style="background-color: yellow">  
+                <p:menuitem value="Accordion" url="./faces/Accordion.xhtml" style="font-family: fantasy;"/>
+                <p:menuitem value="Fieldset" url="./faces/Fieldset.xhtml" style="font-family: fantasy;"/>
+                <p:menuitem value="ScrollPanel" url="./faces/ScrollPanel.xhtml" style="font-family: fantasy;"/>
+                <p:menuitem value="TabView" url="./faces/TabView.xhtml" style="font-family: fantasy;"/>
+            </p:menubar>
+        </h:form>
+        <center>
+            <h1 style="font: oblique bold 220% cursive;">Componente TabView</h1>
+        </center>
+        <h:form id="form">
+            <p:growl id="msgs" showDetail="true" skipDetailIfEqualsSummary="true"/>
+
+            <div class="card">
+                <h2>Carga bajo demanda</h2>
+                <p:tabView dynamic="true" cache="true" style="width: 60%">
+                    <p:tab title="Título I">
+                        <p:panel id="hpnl" header="Solo horizontal" style="width: 250px">
+                            <img src="./faces/imagen/primefaces-11.jpg" alt="" style="width: 200px"/>
+                        </p:panel>
+                        <p:draggable for="hpnl" axis="x" />
+                    </p:tab>
+                    <p:tab title="Título II">
+                        <p class="p-m-0">
+                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab
+                            illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut
+                            odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Consectetur, adipisci velit, sed quia non numquam eius modi.
+                        </p>
+                    </p:tab>
+                    <p:tab title="Título III">
+                        <p class="p-m-0">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores
+                            et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
+                            Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.
+                        </p>
+                    </p:tab>
+                </p:tabView>
+            </div>
+
+            <div class="card">
+                <h2>Eventos</h2>
+                <p:tabView>
+                    <p:ajax event="tabChange" listener="#{eventos.onTabChange}" update=":form:msgs"/>
+                    <p:ajax event="tabClose" listener="#{eventos.onTabClose}" update=":form:msgs"/>
+
+                    <p:tab title="Título I">
+                        <p class="p-m-0">
+                            Invencible nos cuenta la historia de Mark Grayson, un chico que está en su último año de instituto y cuyo padre es Omni-Man, el superhéroe más poderoso del planeta. 
+                            Mark descubre que ha heredado los poderes de su padre y tendrá que lidiar con su herencia y los problemas típicos de todo adolescente que se precie.
+                        </p>
+                    </p:tab>
+                    <p:tab title="Título II" closable="true">
+                        <p class="p-m-0">
+                            Invencible nos cuenta la historia de Mark Grayson, un chico que está en su último año de instituto y cuyo padre es Omni-Man, el superhéroe más poderoso del planeta. 
+                            Mark descubre que ha heredado los poderes de su padre y tendrá que lidiar con su herencia y los problemas típicos de todo adolescente que se precie.
+                        </p>
+                    </p:tab>
+                    <p:tab title="Título III" closable="true">
+                        <p class="p-m-0">Invencible nos cuenta la historia de Mark Grayson, un chico que está en su último año de instituto y cuyo padre es Omni-Man, el superhéroe más poderoso del planeta. 
+                            Mark descubre que ha heredado los poderes de su padre y tendrá que lidiar con su herencia y los problemas típicos de todo adolescente que se precie.
+                        </p>
+                    </p:tab>
+
+                    <p:tab title="Título IV" >
+                        <p class="p-m-0">Invencible nos cuenta la historia de Mark Grayson, un chico que está en su último año de instituto y cuyo padre es Omni-Man, el superhéroe más poderoso del planeta. 
+                            Mark descubre que ha heredado los poderes de su padre y tendrá que lidiar con su herencia y los problemas típicos de todo adolescente que se precie.
+                        </p>
+                    </p:tab>
+                </p:tabView>
+            </div>
+
+            <div class="card">
+                <h3>Orientación Izquierda</h3>
+                <p:tabView orientation="left">
+                    <p:tab title="Harry Potter y la piedra filosofal">
+                        <h:panelGrid cellpadding="10">
+                            <h:outputText
+                                value="Harry Potter se ha quedado huérfano y vive en casa de sus abominables tíos y el insoportable primo Dudley. 
+                                Harry se siente muy triste y solo, hasta que un buen día recibe una carta que cambiará su vida para siempre. 
+                                En ella le comunican que ha sido aceptado como alumno en el Colegio Hogwarts de Magia. 
+                                A partir de ese momento, la suerte de Harry da un vuelco espectacular. 
+                                En esa escuela tan especial aprenderá encantamientos, trucos fabulosos y tácticas de defensa contra las malas artes. 
+                                Se convertirá en el campeón escolar de Quidditch, especie de fútbol aéreo que se juega montado sobre escobas, y hará un puñado de buenos amigos... aunque también algunos temibles enemigos. 
+                                Pero, sobre todo, conocerá los secretos que le permitirán cumplir su destino." />
+                        </h:panelGrid>
+                    </p:tab>
+                    <p:tab title="Harry Potter y la cámara secreta">
+                        <h:panelGrid cellpadding="10">
+                            <h:outputText value="La trama sigue el segundo año de Harry Potter en el Colegio Hogwarts de Magia y Hechicería, 
+                                          durante el cual una serie de mensajes en las paredes de los pasillos de la escuela advierten que la Cámara 
+                                          de los Secretos ha sido abierta y que el «heredero de Slytherin» matará a todos los alumnos que no provengan 
+                                          de familias con sangre mágica. Dichas amenazas se cumplen con ataques que dejan a los alumnos de 
+                                          la escuela «petrificados». Durante todo el año, Harry y sus amigos Ron Weasley y Hermione Granger investigan 
+                                          sobre los ataques, un hecho similar que había ocurrido años antes, lo cual lleva al protagonista a conocer 
+                                          más la historia de su mayor enemigo, lord Voldemort, quien había asesinado a sus padres cuando era un bebé." />
+                        </h:panelGrid>
+                    </p:tab>
+                    <p:tab title="Harry Potter y el prisionero de Azkaban">
+                        <h:panelGrid cellpadding="10">
+                            <h:outputText value="La trama del libro describe que un peligroso asesino, Sirius Black, se escapó de Azkaban, 
+                                          la prisión de los magos, y al parecer está dispuesto a encontrar y matar a Harry. 
+                                          Se sabe también que es la primera persona en escapar de la prisión de magos y nadie sabe cómo lo hizo. 
+                                          Muchos dicen que es por los poderes que adquirió cuando estuvo en el bando de Lord Voldemort. 
+                                          Black es el prisionero de Azkaban que cita el título del libro." />
+                        </h:panelGrid>
+                    </p:tab>
+                </p:tabView>
+            </div>
+        </h:form>
+    </h:body>
+</html>
+

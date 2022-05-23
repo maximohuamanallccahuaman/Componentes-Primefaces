@@ -1,0 +1,63 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+    <h:head>
+        <title>ScrollPanel</title>
+    </h:head>
+    <h:body>
+        <style>
+            body {background-color: yellowgreen}
+        </style>
+
+        <h:form>  
+            <p:menubar style="background-color: yellow">  
+                <p:menuitem value="Accordion" url="./faces/Accordion.xhtml" style="font-family: fantasy;"/>
+                <p:menuitem value="Fieldset" url="./faces/Fieldset.xhtml" style="font-family: fantasy;"/>
+                <p:menuitem value="ScrollPanel" url="./faces/ScrollPanel.xhtml" style="font-family: fantasy;"/>
+                <p:menuitem value="TabView" url="./faces/TabView.xhtml" style="font-family: fantasy;"/>
+            </p:menubar>
+        </h:form>
+        <center>
+            <h1 style="font: oblique bold 220% cursive;">Componente ScrollPanel</h1>
+        </center>
+        <h:form>
+            <div class="card">
+                <center>
+                    <h2 style="margin-top:0">Barras de desplazamiento</h2>
+                    <p:scrollPanel style="width:300px;height:350px">
+                        <p class="p-m-0 p-p-3">
+                            Vito Corleone es el jefe de una de las familias que lideran la Cosa Nostra neoyorkina durante los años 40. 
+                            Dos de sus hijos participan en las actividades ilícitas, mientras que Michael, el menor de los hijos, 
+                            está distanciado del negocio familiar. Un atentado contra don Vito orilla a Michael a cuidar de su 
+                            padre y tomar las riendas de los negocios. Referente obligado del cine de gánsters, 
+                            El padrino explora los mecanismos del poder en la mafia y sus rigurosos códigos familiares. 
+                            Basado en una novela de Mario Puzo, Francis Ford Coppola configuró este filme a partir de un lóbrego estilo visual, 
+                            un riguroso guion y un sólido reparto encabezado por Marlon Brando, Al Pacino y Robert Duvall.
+                        </p>
+                    </p:scrollPanel>
+                </center>
+            </div>
+
+            <div class="card">
+                <center>
+                    <h2>ScrollPanel nativo</h2>
+                    <p:scrollPanel mode="native" style="width:250px;height:200px">
+                        <p class="p-m-0">
+                            Vito Corleone es el jefe de una de las familias que lideran la Cosa Nostra neoyorkina durante los años 40. 
+                            Dos de sus hijos participan en las actividades ilícitas, mientras que Michael, el menor de los hijos, 
+                            está distanciado del negocio familiar. Un atentado contra don Vito orilla a Michael a cuidar de su 
+                            padre y tomar las riendas de los negocios. Referente obligado del cine de gánsters, 
+                            El padrino explora los mecanismos del poder en la mafia y sus rigurosos códigos familiares. 
+                            Basado en una novela de Mario Puzo, Francis Ford Coppola configuró este filme a partir de un lóbrego estilo visual, 
+                            un riguroso guion y un sólido reparto encabezado por Marlon Brando, Al Pacino y Robert Duvall.
+                        </p>
+                    </p:scrollPanel>
+                </center>
+            </div>
+        </h:form>
+    </h:body>
+</html>
+
